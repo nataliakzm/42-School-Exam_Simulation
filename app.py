@@ -1,5 +1,4 @@
 #Author: Natalia Kuzminykh
-
 #Importing libraries
 import streamlit as st
 import random
@@ -99,7 +98,6 @@ level_4 = [
 
 
 #Creating the app interface
-#st.title(':rocket: School 42 Exam Simulator: Rank 02')
 st.markdown('<h2 style="text-align: center;">🚀 School 42 Exam Simulator: Rank 02</h2>', unsafe_allow_html=True)
 st.markdown('<h4 style="text-align: center;font-weight: normal">This exam has 4 questions in total. A random question is picked from each level below.</h4>', unsafe_allow_html=True)   
 
@@ -108,54 +106,8 @@ if 'level' not in st.session_state:
     st.session_state['level'] = 0
     st.session_state['tasks'] = []
     
-    #Add a range of levels for those who want to start from a particular level
-    #st.session_state['level'] = st.sidebar.selectbox('Select Level', [0, 1, 2, 3, 4])   
-
 #Creating a progress bar
 progress_bar = st.progress(min(st.session_state['level'] / 4, 1))
-
-###################################################TO DO################################################## 
-"""
-#Setting up the sidebar
-st.sidebar.header('Select your Level')
- 
-#define function to select category
-def select_category():
-    st.session_state['level'] = 0
-    st.session_state['tasks'] = []
-    display_selections = st.sidebar.multiselect(
-    'Which levels would you like to practice?',
-    ['Level 1', 'Level 2', 'Level 3', 'Level 4'], None)
-    
-    if 'Level 1' in display_selections:
-        select_category()
-        st.session_state['level'] = 1
-        task_name = random.choice(eval(f'level_{st.session_state["level"]}'))
-        st.session_state['tasks'].append(task_name)
-        progress_bar.progress(min(st.session_state['level'] / 4, 1))
-
-    elif 'Level 2' in display_selections:
-        select_category()
-        st.session_state['level'] = 2
-        task_name = random.choice(eval(f'level_{st.session_state["level"]}'))
-        st.session_state['tasks'].append(task_name)
-        progress_bar.progress(min(st.session_state['level'] / 4, 1))
-
-    elif 'Level 3' in display_selections:
-        select_category()
-        st.session_state['level'] = 3
-        task_name = random.choice(eval(f'level_{st.session_state["level"]}'))
-        st.session_state['tasks'].append(task_name)
-        progress_bar.progress(min(st.session_state['level'] / 4, 1))
-
-    elif 'Level 4' in display_selections:
-        select_category()
-        st.session_state['level'] = 4
-        task_name = random.choice(eval(f'level_{st.session_state["level"]}'))
-        st.session_state['tasks'].append(task_name)
-        progress_bar.progress(min(st.session_state['level'] / 4, 1))
-"""
-##############################################################################################################
 
 #Creating a button to start the exam
 if st.session_state['level'] == 0:
