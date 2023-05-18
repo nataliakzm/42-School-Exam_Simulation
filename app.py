@@ -40,6 +40,7 @@ def start_exam(level, progress_bar):
 
 #Creating a button to move to the next level
 def next_level(level, progress_bar):
+    st.write('\n')
     if st.button(f'Next Level (Level {st.session_state["level"] + 1})'):
         st.session_state['level'] += 1
         task_name = random.choice(level)
@@ -59,6 +60,7 @@ def select_level():
 
 #Creating a button to finish the exam
 def finish_exam(progress_bar):
+    st.write('\n')
     if st.button('Finish Exam'):
         st.session_state['level'] += 1
         progress_bar.progress(min(st.session_state['level'] / 4, 1))
@@ -125,7 +127,7 @@ elif st.session_state['level'] == 4:
 
 #We did it! The exam is over!
 if st.session_state['level'] == 5:
-    st.subheader('Congratulations! You successfully passed the exam!')
+    st.markdown('<h2 style="text-align: center;"><br> Congratulations! <br> You successfully passed the exam!</h2>', unsafe_allow_html=True)
     st.balloons()  # Celebrate with balloons.
     start_over()
 
