@@ -61,7 +61,7 @@ def display_exam():
     for i, task_name in enumerate(st.session_state['tasks'], start=1):
         st.subheader(f'Level {i}')
         expected_files, allowed_functions, description = load_task(task_name)
-        st.markdown(f'**Task:** {task_name}\n', unsafe_allow_html=True)
+        st.info(f'**Task:** {task_name}')
         st.markdown(f'**Expected files:** {expected_files}\n', unsafe_allow_html=True)
         st.markdown(f'**Allowed functions:** {allowed_functions}\n', unsafe_allow_html=True) 
         st.markdown(f'**Description:**\n{description}\n', unsafe_allow_html=True)

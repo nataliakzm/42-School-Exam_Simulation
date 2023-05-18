@@ -45,6 +45,7 @@ if 0 < st.session_state['level'] < 4:
 
 elif st.session_state['level'] == 4:
     finish_exam(progress_bar)
+    show_answer()
 
 #We did it! The exam is over!
 if st.session_state['level'] == 5:
