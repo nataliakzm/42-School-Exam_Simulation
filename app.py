@@ -129,5 +129,8 @@ if st.session_state['level'] == 5:
 st.markdown("""
     <div style="position: fixed; bottom: 10px; right: 10px; text-align: right;">
         Made by <a href="https://github.com/nataliakzm" target="_blank">@nataliakzm</a> 👩🏽‍💻
+        <br>
+        <br>
+        <br>        
     </div>
     """, unsafe_allow_html=True)
