@@ -7,7 +7,8 @@ import streamlit as st
 
 #Importing functions from other files
 from config import set_page_config, footer
-from utils import *
+from utils import load_task, load_answer, start_over, start_exam, display_exam, next_level, show_answer, finish_exam, select_level, levels
+
 
 # Set the page configuration
 set_page_config()
