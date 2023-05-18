@@ -49,7 +49,9 @@ def next_level(level, progress_bar):
 
 #Creating a button to start the selected level
 def select_level():
-    selected_level = st.sidebar.selectbox('Select Level', list(levels.keys()))
+    #add title
+    st.sidebar.markdown('<h2 style="text-align: center;">Pick Your Starting Point 🎯</h2>', unsafe_allow_html=True)
+    selected_level = st.sidebar.selectbox('Select Level:', list(levels.keys()))
     if st.sidebar.button('Start Selected Level'):
         st.session_state['level'] = selected_level
         st.session_state['tasks'] = [random.choice(levels[i]) for i in range(1, selected_level+1)]
