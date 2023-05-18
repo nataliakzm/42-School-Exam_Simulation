@@ -126,6 +126,7 @@ elif st.session_state['level'] == 4:
 #We did it! The exam is over!
 if st.session_state['level'] == 5:
     st.subheader('Congratulations! You successfully passed the exam!')
+    st.balloons()  # Celebrate with balloons.
     start_over()
 
 st.markdown("""
