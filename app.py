@@ -40,6 +40,7 @@ display_exam()
  
 if 0 < st.session_state['level'] < 4:
     next_level(levels[st.session_state['level'] + 1], progress_bar)
+    show_answer()
 
 elif st.session_state['level'] == 4:
     finish_exam(progress_bar)

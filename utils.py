@@ -42,6 +42,12 @@ def load_task(task_name):
         description = desc_parts[0] + 'Examples:\n```\n' + desc_parts[1].strip() + '\n```'
     return expected_files, allowed_functions, description
 
+###
+def load_answer(task_name):
+    with open(f'answers/{task_name}.c', 'r') as f:
+        answer = f.read()
+    return answer
+
 #Creating a button to start the exam
 def start_exam(level, progress_bar):
     if st.button('Start Exam'):
@@ -69,6 +75,14 @@ def next_level(level, progress_bar):
         st.session_state['tasks'].append(task_name)
         progress_bar.progress(min(st.session_state['level'] / 4, 1))
         st.experimental_rerun()
+
+# Function to show the answer
+def show_answer():
+    task_name = st.session_state['tasks'][st.session_state['level'] - 1]
+    answer = load_answer(task_name)
+    with st.expander("Show Answer"):
+        st.code(answer)
+
 
 #Creating a button to start the selected level
 def select_level():
