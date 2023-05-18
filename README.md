@@ -18,7 +18,9 @@ To start the application, run the following command in your terminal:
 ```
 streamlit run app.py
 ```
-OR Check out the website: https://42school-exam-simulator.streamlit.app/
+OR Check out the website: 
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://42school-exam-simulator.streamlit.app)
 
 ## License
 This project is licensed under the MIT License.
